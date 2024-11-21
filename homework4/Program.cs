@@ -69,51 +69,5 @@ class Program
                 return true;
         }
         return false;
-
-
-        Console.WriteLine("№2");
-        /*Написать метод, где в качества аргумента будет передан массив (ключевое слово
-params). Вывести сумму элементов массива (вернуть). Вывести (ref) произведение
-массива. Вывести (out) среднее арифметическое в массиве.*/
-
-
-        {
-            {
-                int[] numbers = { 1, 2, 3, 4, 5 };
-
-                int product;
-                double average;
-
-                int sum = CalculateArrayStatistics(numbers, out average, ref product);
-
-                Console.WriteLine($"Сумма элементов массива: {sum}");
-                Console.WriteLine($"Произведение элементов массива: {product}");
-                Console.WriteLine($"Среднее арифметическое элементов массива: {average}");
-            }
-
-            int CalculateArrayStatistics(int[] numbers, out double average, ref int product)
-            {
-                int sum = 0;
-                product = 1;
-
-
-                for (int i = 0; i < numbers.Length; i++)
-                {
-                    sum += numbers[i];
-                    product *= numbers[i];
-                }
-
-                if (numbers.Length > 0)
-                {
-                    average = (double)sum / numbers.Length;
-                }
-                else
-                {
-                    average = 0;
-                }
-
-                return sum;
-            }
-        }
     }
 }
